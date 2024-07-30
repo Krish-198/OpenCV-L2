@@ -22,5 +22,24 @@ kernel=np.ones((11,11),np.uint8)
 n=cv2.erode(img,kernel)
 cv2.imshow("Blah",n)
 cv2.waitKey(0)
+#Gaussian Blur
+#we use this mostly in machine learining pre processing steps
+Gaussian=cv2.GaussianBlur(img,(17,17),0)
+cv2.imshow("Gaussian Blur",Gaussian)
+cv2.waitKey(0)
+#Median Blur 
+#It is used in digital processing it preserves edges but removes noise
+median=cv2.medianBlur(img,27)
+cv2.imshow("Median Blur",median)
+cv2.waitKey(0)
+#Bilateral Blur
+#Only sharp edges are preserved
+Bilater=cv2.bilateralFilter(img,27,3,27)
+cv2.imshow("Bilateral Blur",Bilater)
+cv2.waitKey(0)
+#Border
+border=cv2.copyMakeBorder(img1,100,100,100,100,cv2.BORDER_CONSTANT,value=100)
+cv2.imshow("Border",border)
+cv2.waitKey(0)
 
 cv2.destroyAllWindows()
